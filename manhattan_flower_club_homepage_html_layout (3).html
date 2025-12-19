@@ -3,20 +3,90 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Hero — Manhattan Flower Club</title>
+  <title>Manhattan Flower Club</title>
   <style>
-    html,body { height:100%; margin:0; }
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Lora', serif;
+      background: #fff;
+      color: #000;
+    }
     .hero {
-      height:100vh;                     /* fills browser viewport height */
+      height: 100vh; /* full viewport height */
       background: url('carb.png') center center / cover no-repeat;
-      background-color:#000;            /* fallback while image loads */
+      background-color: #000; /* fallback */
+    }
+    nav {
+      background: #fff;
+      padding: 20px 0;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+      font-family: 'Playfair Display', serif;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: #000;
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 18px;
+      margin: 0 30px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #C9A24D; /* gold accent */
+    }
+    section {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      margin-bottom: 30px;
+      color: #C9A24D;
+      text-align: center;
+    }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      max-width: 900px;
+      margin: 0 auto 60px;
+    }
+    .card {
+      border: 1px solid #C9A24D;
+      padding: 40px;
+      text-align: center;
+      font-family: 'Lora', serif;
+      font-size: 20px;
+      color: #000;
+      background: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .card:hover {
+      background-color: #C9A24D;
+      color: #000;
+    }
+    footer {
+      padding: 60px 20px;
+      text-align: center;
+      border-top: 1px solid #C9A24D;
+      font-family: 'Lora', serif;
+      color: #C9A24D;
     }
   </style>
 </head>
 <body>
+
   <div class="hero" role="img" aria-label="Manhattan Flower Club hero banner"></div>
-</body>
-</html>
+
   <nav>
     <a href="#home">Home</a>
     <a href="#about">About Us</a>
