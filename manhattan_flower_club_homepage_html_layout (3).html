@@ -2,86 +2,172 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Manhattan Flower Club</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    :root{
+    :root {
       --gold: #bfa047;
-      --gold-strong:#FFD700;
+      --gold-strong: #FFD700;
       --bg: #ffffff;
-      --muted:#555;
-      --card:#fdfaf6;
+      --muted: #555;
+      --card: #fdfaf6;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:'Playfair Display',serif;background:var(--bg);color:#111;}
-    a{text-decoration:none;color:inherit}
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      background: var(--bg);
+      color: #111;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
     /* HERO */
-    .hero{
-      position:relative;
-      background: url('carb.png') center/cover no-repeat;
-      height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      overflow:hidden;
+    .hero {
+      position: relative;
+      background: url('carb.png') center/cover no-repeat, #f0f0f0; /* fallback color */
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
     }
-    /* subtle overlay to improve contrast but low enough so center logo remains visible */
-    .hero::after{
-      content:"";
-      position:absolute;inset:0;
-      background:linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18));
-      pointer-events:none;
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18));
+      pointer-events: none;
     }
-    /* small, elegant tagline placed top-left so it doesn't interfere with center logo */
-    .hero-tagline{
-      position:absolute;
-      top:28px;
-      left:32px;
-      z-index:2;
-      color:var(--gold);
-      text-align:left;
-      line-height:1;
+
+    .hero-tagline {
+      position: absolute;
+      top: 28px;
+      left: 32px;
+      z-index: 2;
+      color: var(--gold);
+      text-align: left;
+      line-height: 1;
     }
-    .hero-tagline .brand{
-      font-size:1.4rem;
-      letter-spacing:1px;
-      font-weight:700;
-      text-transform:capitalize;
+
+    .hero-tagline .brand {
+      font-size: 1.4rem;
+      letter-spacing: 1px;
+      font-weight: 700;
+      text-transform: capitalize;
     }
-    .hero-tagline .tag{
-      display:block;
-      margin-top:6px;
-      font-size:0.95rem;
-      color:rgba(191,160,71,0.95);
-      font-weight:400;
+
+    .hero-tagline .tag {
+      display: block;
+      margin-top: 6px;
+      font-size: 0.95rem;
+      color: rgba(191,160,71,0.95);
+      font-weight: 400;
     }
-    /* center area left intentionally empty to show logo in image */
-    /* NAV (below hero) */
-    .site-nav{
-      background:#fff;
-      border-top:1px solid rgba(0,0,0,0.06);
-      border-bottom:1px solid rgba(0,0,0,0.06);
-      text-align:center;
-      padding:18px 10px;
-      position:relative;
+
+    /* NAV */
+    .site-nav {
+      background: #fff;
+      border-top: 1px solid rgba(0,0,0,0.06);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      text-align: center;
+      padding: 18px 10px;
     }
-    .site-nav .nav-inner{display:inline-block;}
-    .site-nav a{
-      display:inline-block;
-      margin:0 20px;
-      font-size:0.95rem;
-      letter-spacing:2px;
-      color:#111;
-      font-weight:600;
-      text-transform:uppercase;
-      transition:color .22s ease;
+
+    .site-nav .nav-inner {
+      display: inline-block;
     }
-    .site-nav a:hover{color:var(--gold-strong)}
-    /* Sections */
-    section{padding:70px 18px;text-align:center}
-    .section-title{font-size:2rem;color:var(--gold);margin-bottom:28px}
-    #about p{max-width:760px;margin:0 auto;color:var(--muted);font-size:1.05rem;line-height:1.6}
-    /* grids */
-    .grid{display:grid;gap:28px}
-    .services-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));max-width:1100px;margin:0 auto}
+
+    .site-nav a {
+      display: inline-block;
+      margin: 0 20px;
+      font-size: 0.95rem;
+      letter-spacing: 2px;
+      color: #111;
+      font-weight: 600;
+      text-transform: uppercase;
+      transition: color 0.22s ease;
+    }
+
+    .site-nav a:hover {
+      color: var(--gold-strong);
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 70px 18px;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      color: var(--gold);
+      margin-bottom: 28px;
+    }
+
+    #about p {
+      max-width: 760px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    /* GRIDS */
+    .grid {
+      display: grid;
+      gap: 28px;
+    }
+
+    .services-grid {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="hero-tagline">
+      <div class="brand">Manhattan Flower Club</div>
+      <span class="tag">Elegance in Every Bloom</span>
+    </div>
+  </div>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <section id="about">
+    <h2 class="section-title">About Us</h2>
+    <p>
+      Welcome to Manhattan Flower Club, where timeless elegance meets natural beauty. We specialize in curated floral arrangements for every occasion.
+    </p>
+  </section>
+
+  <section id="services">
+    <h2 class="section-title">Our Services</h2>
+    <div class="grid services-grid">
+      <div class="service-card">Floral Design</div>
+      <div class="service-card">Event Styling</div>
+      <div class="service-card">Custom Arrangements</div>
+    </div>
+  </section>
+
+</body>
+</html>
