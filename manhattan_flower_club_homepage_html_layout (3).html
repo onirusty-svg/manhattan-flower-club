@@ -1,133 +1,305 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Manhattan Flower Club</title>
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      font-family: 'Lora', serif;
-      background: #fff;
-      color: #000;
-    }
-    .hero {
-      height: 100vh; /* full viewport height */
-      background: url('carb.png') center center / cover no-repeat;
-      background-color: #000; /* fallback */
-    }
-    nav {
-      background: #fff;
-      padding: 20px 0;
-      text-align: center;
-      border-bottom: 1px solid #ddd;
-      font-family: 'Playfair Display', serif;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    nav a {
-      color: #000;
-      text-decoration: none;
-      font-weight: 400;
-      font-size: 18px;
-      margin: 0 30px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      transition: color 0.3s ease;
-    }
-    nav a:hover {
-      color: #C9A24D; /* gold accent */
-    }
-    section {
-      max-width: 900px;
-      margin: 60px auto;
-      padding: 0 20px;
-    }
-    h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 36px;
-      margin-bottom: 30px;
-      color: #C9A24D;
-      text-align: center;
-    }
-    .services {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
-      max-width: 900px;
-      margin: 0 auto 60px;
-    }
-    .card {
-      border: 1px solid #C9A24D;
-      padding: 40px;
-      text-align: center;
-      font-family: 'Lora', serif;
-      font-size: 20px;
-      color: #000;
-      background: #fff;
-      cursor: pointer;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-    .card:hover {
-      background-color: #C9A24D;
-      color: #000;
-    }
-    footer {
-      padding: 60px 20px;
-      text-align: center;
-      border-top: 1px solid #C9A24D;
-      font-family: 'Lora', serif;
-      color: #C9A24D;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manhattan Flower Club</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Playfair Display', serif;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        h1, h2, h3, p {
+            margin: 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: url('7eb59855-fda8-4b95-b403-446a64049cf7.png') center/cover no-repeat fixed;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: gold;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            letter-spacing: 3px;
+        }
+        .hero h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            margin-top: 10px;
+        }
+        nav {
+            margin-top: 30px;
+        }
+        nav a {
+            margin: 0 20px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            color: #FFD700;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #333;
+        }
+        .text-gold {
+            color: #bfa047;
+        }
+
+        /* About */
+        #about p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .service-card {
+            background: #fdfaf6;
+            padding: 30px 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: #bfa047;
+        }
+        .service-card p {
+            color: #555;
+        }
+
+        /* Shop */
+        .shop-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .product-card {
+            background: #fdfaf6;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .product-card img {
+            width: 100%;
+            display: block;
+        }
+        .product-card h3 {
+            padding: 15px;
+            color: #bfa047;
+        }
+        .product-card p {
+            padding: 0 15px 15px;
+            color: #555;
+        }
+        .product-card button {
+            margin: 0 15px 15px;
+            padding: 10px 20px;
+            border: none;
+            background: #bfa047;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        .product-card button:hover {
+            background: #FFD700;
+        }
+
+        /* Subscription */
+        .subscription input[type="email"] {
+            padding: 10px 15px;
+            width: 300px;
+            max-width: 80%;
+            border: 2px solid #bfa047;
+            border-radius: 5px;
+            margin-right: 10px;
+            font-size: 1rem;
+        }
+        .subscription button {
+            padding: 10px 20px;
+            border: none;
+            background: #bfa047;
+            color: white;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .subscription button:hover {
+            background: #FFD700;
+        }
+
+        /* Contact */
+        #contact p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #f5f5f5;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        /* Responsive */
+        @media(max-width:768px){
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero h2 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <div class="hero" role="img" aria-label="Manhattan Flower Club hero banner"></div>
-
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About Us</a>
-    <a href="#services">Services</a>
-    <a href="#shop">Shop</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <section id="about">
-    <h2>About Us</h2>
-    <p>At <strong>Manhattan Flower Club</strong>, we curate more than bouquets — we craft unforgettable floral experiences shaped by elegance, artistry, and refined taste. Inspired by the sophistication of Manhattan living and the timeless beauty of nature’s finest blooms, our designs are created for those who appreciate the extraordinary.</p>
-    <p>Each arrangement is thoughtfully conceived and meticulously handcrafted, using only the freshest seasonal flowers sourced from trusted growers. From intimate gestures to grand celebrations, our florals are designed to elevate moments and leave a lasting impression.</p>
-    <p>We believe flowers are an expression of life’s most meaningful occasions — love, success, gratitude, and remembrance. With an unwavering commitment to quality, detail, and service, Manhattan Flower Club brings balance, beauty, and a sense of luxury to every space we touch.</p>
-  </section>
-
-  <section id="services">
-    <h2>Our Services</h2>
-    <div class="services">
-      <div class="card">Luxury Bouquets</div>
-      <div class="card">Weddings & Events</div>
-      <div class="card">Corporate Styling</div>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Manhattan</h1>
+            <h2>Flower Club</h2>
+            <nav>
+                <a href="#about">ABOUT US</a>
+                <a href="#services">SERVICES</a>
+                <a href="#shop">SHOP</a>
+                <a href="#subscription">SUBSCRIBE</a>
+                <a href="#contact">CONTACT</a>
+            </nav>
+        </div>
     </div>
-  </section>
 
-  <section id="shop">
-    <h2>Shop</h2>
-    <div class="services">
-      <div class="card">Signature Collection</div>
-      <div class="card">Seasonal Bouquets</div>
-      <div class="card">Subscriptions</div>
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title text-gold">About Us</h2>
+        <p>Manhattan Flower Club is your luxury destination for hand-picked, elegant floral arrangements. We bring beauty, sophistication, and charm to every event and space.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2 class="section-title text-gold">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Custom Arrangements</h3>
+                <p>Personalized bouquets for weddings, anniversaries, and special occasions.</p>
+            </div>
+            <div class="service-card">
+                <h3>Event Decoration</h3>
+                <p>Transform your event with elegant floral designs and decor.</p>
+            </div>
+            <div class="service-card">
+                <h3>Subscriptions</h3>
+                <p>Regular flower delivery for homes, offices, or gifts to loved ones.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section id="shop">
+        <h2 class="section-title text-gold">Shop</h2>
+        <div class="shop-grid">
+            <div class="product-card">
+                <img src="https://via.placeholder.com/300x300.png?text=Roses" alt="Product">
+                <h3>Luxury Roses</h3>
+                <p>Premium red roses arranged in a stylish bouquet.</p>
+                <button>Buy Now</button>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/300x300.png?text=Tulips" alt="Product">
+                <h3>Spring Tulips</h3>
+                <p>Bright and cheerful tulips to brighten any space.</p>
+                <button>Buy Now</button>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/300x300.png?text=Orchids" alt="Product">
+                <h3>Elegant Orchids</h3>
+                <p>Exotic orchids perfect for luxury gifts or decor.</p>
+                <button>Buy Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subscription Section -->
+    <section id="subscription">
+        <h2 class="section-title text-gold">Subscribe to Our Newsletter</h2>
+        <p>Get exclusive offers, floral tips, and new product updates directly to your inbox.</p>
+        <div class="subscription">
+            <form>
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title text-gold">Contact Us</h2>
+        <p>Email: info@manhattanflowerclub.com | Phone: +1 234 567 890</p>
+        <p>Address: 123 Manhattan Street, New York, NY</p>
+    </section>
+
+    <!-- Footer -->
+    <div class="footer">
+        &copy; 2025 Manhattan Flower Club. All Rights Reserved.
     </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Inquiries: hello@manhattanflowerclub.com</p>
-  </section>
-
-  <footer>
-    © Manhattan Flower Club
-  </footer>
 
 </body>
 </html>
