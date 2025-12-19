@@ -2,182 +2,144 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Manhattan Flower Club</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Lora:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Lora:wght@300;400&display=swap" rel="stylesheet" />
   <style>
-    body { margin: 0; background:#0B0B0B; color:#C9A24D; font-family:'Lora', serif; }
-    header { height:100vh; background:url('carb.png') center/cover no-repeat; position:relative; }
-header::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.25);}
-    nav { position:absolute; bottom:0; width:100%; display:flex; align-items:center; justify-content:center; padding:30px 0; background:#ffff; z-index:10; }
-    nav a { color:#C9A24D; text-decoration:none; letter-spacing:2px; font-size:14px; } .nav-links{display:flex; gap:80px;} .logo{display:none;}
-    .hero-text { position:absolute; bottom:20%; width:100%; text-align:center; }
-    .hero-text h1 { font-family:'Playfair Display', serif; font-size:56px; letter-spacing:4px; margin:0; }
-    section { padding:120px 12%; }
-    h2 { font-family:'Playfair Display', serif; font-size:36px; margin-bottom:30px; }
-    .services { display:grid; grid-template-columns:repeat(3,1fr); gap:40px; }
-    .card { border:1px solid #C9A24D; padding:40px; text-align:center; }
-    footer { padding:60px; text-align:center; border-top:1px solid #C9A24D; }
+    body {
+      margin: 0;
+      background: #fff;
+      color: #000;
+      font-family: 'Lora', serif;
+    }
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 600px;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: url('images/carb.png') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .hero img.logo {
+      max-width: 300px;
+      height: auto;
+      z-index: 2;
+      filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
+    }
+    nav {
+      background: #fff;
+      padding: 20px 0;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+      font-family: 'Playfair Display', serif;
+    }
+    nav a {
+      color: #000;
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 18px;
+      margin: 0 30px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #C9A24D;
+    }
+    section {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      margin-bottom: 30px;
+      color: #C9A24D;
+      text-align: center;
+    }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      max-width: 900px;
+      margin: 0 auto 60px;
+    }
+    .card {
+      border: 1px solid #C9A24D;
+      padding: 40px;
+      text-align: center;
+      font-family: 'Lora', serif;
+      font-size: 20px;
+      color: #000;
+      background: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .card:hover {
+      background-color: #C9A24D;
+      color: #000;
+    }
+    footer {
+      padding: 60px 20px;
+      text-align: center;
+      border-top: 1px solid #C9A24D;
+      font-family: 'Lora', serif;
+      color: #C9A24D;
+    }
   </style>
 </head>
 <body>
 
-<header>
+  <div class="hero">
+    <img src="images/MFC_LOGO.png" alt="Manhattan Flower Club Logo" class="logo" />
+  </div>
+
   <nav>
-    <img src="MFC LOGO.png" alt="Manhattan Flower Club Logo" class="logo" />
-    <div class="nav-links">
-      <a href="#home">HOME</a>
-      <a href="#about">ABOUT</a>
-      <a href="#services">SERVICES</a>
-      <a href="#contact">CONTACT</a>
-    </div>
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#services">Services</a>
+    <a href="#shop">Shop</a>
+    <a href="#contact">Contact</a>
   </nav>
-  <div class="hero-text" style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; z-index:2;">
-    <img src="MFC LOGO.png" alt="Manhattan Flower Club" style="width:220px; margin-bottom:30px;" />
-  </div>
-</header>
 
-<section id="about">
-  <h2>About Us</h2>
-  <p>At <strong>Manhattan Flower Club</strong>, we curate more than bouquets — we craft unforgettable floral experiences shaped by elegance, artistry, and refined taste. Inspired by the sophistication of Manhattan living and the timeless beauty of nature’s finest blooms, our designs are created for those who appreciate the extraordinary.</p>
+  <section id="about">
+    <h2>About Us</h2>
+    <p>At <strong>Manhattan Flower Club</strong>, we curate more than bouquets — we craft unforgettable floral experiences shaped by elegance, artistry, and refined taste. Inspired by the sophistication of Manhattan living and the timeless beauty of nature’s finest blooms, our designs are created for those who appreciate the extraordinary.</p>
+    <p>Each arrangement is thoughtfully conceived and meticulously handcrafted, using only the freshest seasonal flowers sourced from trusted growers. From intimate gestures to grand celebrations, our florals are designed to elevate moments and leave a lasting impression.</p>
+    <p>We believe flowers are an expression of life’s most meaningful occasions — love, success, gratitude, and remembrance. With an unwavering commitment to quality, detail, and service, Manhattan Flower Club brings balance, beauty, and a sense of luxury to every space we touch.</p>
+  </section>
 
-  <p>Each arrangement is thoughtfully conceived and meticulously handcrafted, using only the freshest seasonal flowers sourced from trusted growers. From intimate gestures to grand celebrations, our florals are designed to elevate moments and leave a lasting impression.</p>
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="card">Luxury Bouquets</div>
+      <div class="card">Weddings & Events</div>
+      <div class="card">Corporate Styling</div>
+    </div>
+  </section>
 
-  <p>We believe flowers are an expression of life’s most meaningful occasions — love, success, gratitude, and remembrance. With an unwavering commitment to quality, detail, and service, Manhattan Flower Club brings balance, beauty, and a sense of luxury to every space we touch.</p>
-</section>
+  <section id="shop">
+    <h2>Shop</h2>
+    <div class="services">
+      <div class="card">Signature Collection</div>
+      <div class="card">Seasonal Bouquets</div>
+      <div class="card">Subscriptions</div>
+    </div>
+  </section>
 
-<section id="services">
-  <h2>Our Services</h2>
-  <div class="services">
-    <div class="card">Luxury Bouquets</div>
-    <div class="card">Weddings & Events</div>
-    <div class="card">Corporate Styling</div>
-  </div>
-</section>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Inquiries: hello@manhattanflowerclub.com</p>
+  </section>
 
-<section id="services">
-  <h2>Our Services</h2>
-  <div class="services">
-    <div class="card">Luxury Bouquets</div>
-    <div class="card">Weddings & Events</div>
-    <div class="card">Corporate Styling</div>
-  </div>
-</section>
-
-<section id="shop">
-  <h2>Shop</h2>
-  <div class="services">
-    <div class="card">Signature Collection</div>
-    <div class="card">Seasonal Bouquets</div>
-    <div class="card">Subscriptions</div>
-  </div>
-</section>
-
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Inquiries: hello@manhattanflowerclub.com</p>
-</section>
-
-<section id="terms">
-  <h2>Terms of Use</h2>
-  <p>Welcome to Manhattan Flower Club. By accessing or using our website, mobile applications, or placing orders through our social media channels (collectively, the "Services"), you agree to comply with and be bound by these Terms of Use.</p>
-
-  <p><strong>Eligibility:</strong> You must be at least 18 years old and of legal age in your jurisdiction to use our Services.</p>
-
-  <p><strong>Use of Services:</strong> Our Services provide access to luxury floral arrangements and bespoke gifts. You agree to use the Services lawfully and respectfully.</p>
-
-  <p><strong>Intellectual Property:</strong> All content, including images, designs, text, and trademarks, are the exclusive property of Manhattan Flower Club or its licensors. Unauthorized use is prohibited.</p>
-
-  <p><strong>Orders and Payment:</strong> Orders are subject to acceptance and availability. Prices may change without notice. Payment is required at the time of order.</p>
-
-  <p><strong>Delivery:</strong> Delivery times are estimates and not guaranteed. We are not liable for delays beyond our control.</p>
-
-  <p><strong>Substitutions:</strong> If necessary, substitutions of equal or greater value may be made while maintaining style and quality.</p>
-
-  <p><strong>Satisfaction Guarantee:</strong> Please contact us within 24 hours of delivery if you are not satisfied for resolution.</p>
-
-  <p><strong>Limitation of Liability:</strong> Manhattan Flower Club is not liable for indirect or consequential damages to the fullest extent permitted by law.</p>
-
-  <p><strong>User Content:</strong> By submitting content, you grant us a royalty-free license to use it in connection with our Services.</p>
-
-  <p><strong>Termination:</strong> We reserve the right to suspend or terminate access for violations of these Terms.</p>
-
-  <p><strong>Governing Law:</strong> These Terms are governed by the laws of New York.</p>
-</section>
-
-<section id="privacy">
-  <h2>Privacy Policy</h2>
-  <p>Your privacy is important to Manhattan Flower Club. This policy explains how we collect, use, and protect your information.</p>
-
-  <p><strong>Information We Collect:</strong> Personal data such as name, contact details, payment information, delivery addresses, device and usage data, and order history.</p>
-
-  <p><strong>How We Use Your Data:</strong> To process orders, communicate updates, improve our Services, and comply with legal obligations.</p>
-
-  <p><strong>Sharing Your Data:</strong> We only share data with trusted partners such as payment processors and delivery services. We do not sell personal data.</p>
-
-  <p><strong>Cookies:</strong> Cookies are used to enhance user experience and analyze site usage. You may manage preferences through your browser.</p>
-
-  <p><strong>Your Rights:</strong> You may access, correct, or request deletion of your personal data at any time.</p>
-
-  <p><strong>Data Security:</strong> We use industry-standard security measures to protect your data.</p>
-
-  <p><strong>Children’s Privacy:</strong> Our Services are not intended for individuals under 18.</p>
-</section>
-
-<section id="ordering">
-  <h2>Ordering & Delivery Policy</h2>
-  <p><strong>Ordering:</strong> We recommend placing orders at least 24 hours in advance. For special events or custom designs, please allow 1–2 weeks.</p>
-
-  <p><strong>Delivery Areas:</strong> We deliver throughout Manhattan and select surrounding neighborhoods. International orders are available upon request.</p>
-
-  <p><strong>Delivery Timing:</strong> Same-day delivery is available for orders placed before 2 PM local time. Delivery times are estimates and not guaranteed.</p>
-
-  <p><strong>Recipient Not Available:</strong> If the recipient is unavailable, our delivery professionals will follow your instructions or leave the arrangement in a secure location.</p>
-
-  <p><strong>Substitutions:</strong> If necessary, substitutions will be made with items of equal or greater value, preserving the arrangement’s intended style.</p>
-
-  <p><strong>Fees & Taxes:</strong> Delivery fees and applicable taxes are calculated at checkout.</p>
-</section>
-
-<section id="refunds">
-  <h2>Refund & Replacement Policy</h2>
-  <p>Your satisfaction is our priority. If your arrangement arrives damaged or not as described, please contact us within 24 hours of delivery and include photos.</p>
-
-  <p>We will offer a replacement or refund at our discretion. Due to the perishable nature of flowers, returns are not accepted.</p>
-</section>
-
-<section id="cookies">
-  <h2>Cookie Policy</h2>
-  <p>Our website uses cookies to provide a seamless and personalized experience.</p>
-
-  <ul>
-    <li><strong>Essential Cookies:</strong> Required for site functionality</li>
-    <li><strong>Performance Cookies:</strong> Help us understand site usage</li>
-    <li><strong>Marketing Cookies:</strong> Deliver relevant promotions</li>
-  </ul>
-
-  <p>You can control cookie preferences through your browser settings.</p>
-</section>
-
-<section id="disclaimer">
-  <h2>Disclaimer</h2>
-  <p>Manhattan Flower Club provides its Services "as is" without warranties of any kind. We do not guarantee uninterrupted access or error-free content.</p>
-
-  <p>To the fullest extent permitted by law, we disclaim liability for damages arising from the use of our Services.</p>
-</section>
-
-<section id="contact-details">
-  <h2>Contact Us</h2>
-  <p>We welcome your inquiries and feedback.</p>
-  <p><strong>Email:</strong> info@manhattanflowerclub.com</p>
-  <p><strong>Phone:</strong> (XXX) XXX-XXXX</p>
-  <p><strong>Address:</strong> [Your Business Address]</p>
-  <p><strong>Business Hours:</strong> Monday–Friday, 9 AM – 6 PM</p>
-</section>
-
-<footer>
-  © Manhattan Flower Club
-</footer>
+  <footer>
+    © Manhattan Flower Club
+  </footer>
 
 </body>
 </html>
