@@ -1,0 +1,905 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manhattan Flower Club - Luxury Florist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&amp;family=Playfair+Display:wght@400;500;600;700&amp;family=Montserrat:wght@300;400&amp;display=swap" rel="stylesheet">
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+    }
+
+    body {
+      font-family: 'Cormorant Garamond', serif;
+      overflow-x: hidden;
+      background: #0a0a0a;
+      color: #c9c9c9;
+    }
+
+    .page-wrapper {
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    /* HERO SECTION */
+    .hero-section {
+      width: 100%;
+      min-height: 100%;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 40px;
+      overflow: hidden;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -15%;
+      width: 70%;
+      height: 160%;
+      background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.12) 0%, transparent 65%);
+      pointer-events: none;
+      animation: pulseGlow 8s ease-in-out infinite;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.6; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.05); }
+    }
+
+    .hero-content {
+      max-width: 1400px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-text {
+      padding: 40px 0;
+    }
+
+    .hero-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: 72px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      color: #d4af37;
+      margin-bottom: 32px;
+      line-height: 1.1;
+      text-shadow: 0 0 50px rgba(212, 175, 55, 0.4);
+    }
+
+    .hero-subheadline {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 18px;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      color: #c9c9c9;
+      line-height: 1.8;
+      margin-bottom: 48px;
+      max-width: 500px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 18px 48px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+      color: #0a0a0a;
+      border-color: #d4af37;
+      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 30px rgba(212, 175, 55, 0.5);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #d4af37;
+      border-color: #d4af37;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(212, 175, 55, 0.1);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.2);
+    }
+
+    .hero-visual {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 600px;
+    }
+
+    .hero-floral-illustration {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      filter: drop-shadow(0 0 40px rgba(212, 175, 55, 0.4));
+      animation: floralFloat 6s ease-in-out infinite;
+    }
+
+    @keyframes floralFloat {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-15px) rotate(2deg); }
+    }
+
+    /* BRAND INTRODUCTION */
+    .brand-section {
+      width: 100%;
+      padding: 120px 40px;
+      background: linear-gradient(180deg, #0f0f0f 0%, #1a1a1a 100%);
+      position: relative;
+    }
+
+    .brand-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 10%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .brand-content {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 56px;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      color: #d4af37;
+      margin-bottom: 40px;
+      line-height: 1.2;
+    }
+
+    .section-text {
+      font-size: 20px;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      color: #c9c9c9;
+      line-height: 1.8;
+      margin-bottom: 48px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* FEATURED COLLECTION */
+    .collection-section {
+      width: 100%;
+      padding: 120px 40px;
+      background: #0a0a0a;
+      position: relative;
+    }
+
+    .collection-header {
+      max-width: 1400px;
+      margin: 0 auto 80px;
+      text-align: center;
+    }
+
+    .collection-grid {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 48px;
+    }
+
+    .product-card {
+      background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      padding: 32px;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, transparent 0%, rgba(212, 175, 55, 0.05) 100%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .product-card:hover {
+      border-color: rgba(212, 175, 55, 0.5);
+      transform: translateY(-8px);
+      box-shadow: 0 12px 40px rgba(212, 175, 55, 0.2);
+    }
+
+    .product-card:hover::before {
+      opacity: 1;
+    }
+
+    .product-image {
+      width: 100%;
+      aspect-ratio: 1;
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.05));
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-image svg {
+      width: 60%;
+      height: 60%;
+      filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.3));
+    }
+
+    .product-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 500;
+      color: #d4af37;
+      margin-bottom: 20px;
+      letter-spacing: 0.05em;
+    }
+
+    .btn-small {
+      padding: 14px 36px;
+      font-size: 10px;
+    }
+
+    .collection-footer {
+      max-width: 1400px;
+      margin: 80px auto 0;
+      text-align: center;
+    }
+
+    /* MEMBERSHIP SECTION */
+    .membership-section {
+      width: 100%;
+      padding: 140px 40px;
+      background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #0a0a0a 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .membership-section::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 800px;
+      height: 800px;
+      background-image: repeating-linear-gradient(45deg, transparent, transparent 60px, rgba(212, 175, 55, 0.03) 60px, rgba(212, 175, 55, 0.03) 61px);
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .membership-content {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .membership-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 40px;
+      filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.5));
+    }
+
+    /* CONCIERGE SECTION */
+    .concierge-section {
+      width: 100%;
+      padding: 120px 40px;
+      background: #0a0a0a;
+      position: relative;
+    }
+
+    .concierge-content {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+    }
+
+    /* JOURNAL SECTION */
+    .journal-section {
+      width: 100%;
+      padding: 120px 40px;
+      background: linear-gradient(180deg, #0f0f0f 0%, #1a1a1a 100%);
+    }
+
+    .journal-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .journal-text {
+      padding: 40px;
+    }
+
+    .journal-image {
+      width: 100%;
+      aspect-ratio: 4/5;
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.05));
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .journal-image svg {
+      width: 70%;
+      height: 70%;
+      filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.4));
+    }
+
+    /* FOOTER */
+    .footer {
+      width: 100%;
+      padding: 80px 40px 40px;
+      background: #0a0a0a;
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 32px;
+      margin-bottom: 48px;
+    }
+
+    .footer-link {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #d4af37;
+      text-decoration: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .footer-link:hover {
+      opacity: 0.7;
+    }
+
+    .footer-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+      margin: 48px 0;
+    }
+
+    .footer-legal {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+
+    .footer-legal a {
+      font-size: 10px;
+      color: #888;
+    }
+
+    .footer-brand {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 14px;
+      letter-spacing: 0.2em;
+      color: #d4af37;
+      opacity: 0.6;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        gap: 60px;
+      }
+
+      .hero-headline {
+        font-size: 56px;
+      }
+
+      .section-title {
+        font-size: 42px;
+      }
+
+      .journal-content {
+        grid-template-columns: 1fr;
+        gap: 60px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-section,
+      .brand-section,
+      .collection-section,
+      .membership-section,
+      .concierge-section,
+      .journal-section {
+        padding: 80px 24px;
+      }
+
+      .hero-headline {
+        font-size: 42px;
+      }
+
+      .hero-subheadline {
+        font-size: 16px;
+      }
+
+      .section-title {
+        font-size: 36px;
+      }
+
+      .section-text {
+        font-size: 18px;
+      }
+
+      .collection-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .hero-buttons,
+      .footer-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+      }
+
+      .footer-links,
+      .footer-legal {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+      }
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body>
+  <div class="page-wrapper"><!-- HERO SECTION -->
+   <section class="hero-section">
+    <div class="hero-content">
+     <div class="hero-text">
+      <h1 class="hero-headline" id="hero-headline">Where Luxury Blooms</h1>
+      <p class="hero-subheadline" id="hero-subheadline">Curated floral artistry for those who hold the key.</p>
+      <div class="hero-buttons"><a href="#membership" class="btn btn-primary" id="hero-primary-btn">Enter the Club</a> <a href="#collection" class="btn btn-secondary" id="hero-secondary-btn">Discover the Collection</a>
+      </div>
+     </div>
+     <div class="hero-visual">
+      <svg class="hero-floral-illustration" viewbox="0 0 400 600" fill="none" xmlns="http://www.w3.org/2000/svg"><!-- Large Dramatic Peony --> <circle cx="200" cy="180" r="85" fill="none" stroke="#d4af37" stroke-width="2" opacity="0.3" /> <circle cx="200" cy="180" r="70" fill="none" stroke="#d4af37" stroke-width="1.5" opacity="0.5" /> <!-- Outer Petals --> <path d="M200 95 C160 90, 120 110, 110 150 C100 190, 120 230, 160 245 C170 220, 180 150, 200 95Z" fill="none" stroke="#d4af37" stroke-width="1.5" opacity="0.7" /> <path d="M200 95 C240 90, 280 110, 290 150 C300 190, 280 230, 240 245 C230 220, 220 150, 200 95Z" fill="none" stroke="#d4af37" stroke-width="1.5" opacity="0.7" /> <path d="M115 180 C100 160, 105 130, 130 115 C155 100, 180 110, 195 135 C180 145, 140 160, 115 180Z" fill="none" stroke="#d4af37" stroke-width="1.5" opacity="0.7" /> <path d="M285 180 C300 160, 295 130, 270 115 C245 100, 220 110, 205 135 C220 145, 260 160, 285 180Z" fill="none" stroke="#d4af37" stroke-width="1.5" opacity="0.7" /> <!-- Middle Layer Petals --> <path d="M200 110 C175 120, 155 140, 150 170 C148 190, 160 205, 180 210 C185 185, 190 135, 200 110Z" fill="none" stroke="#d4af37" stroke-width="1.8" opacity="0.8" /> <path d="M200 110 C225 120, 245 140, 250 170 C252 190, 240 205, 220 210 C215 185, 210 135, 200 110Z" fill="none" stroke="#d4af37" stroke-width="1.8" opacity="0.8" /> <path d="M140 180 C135 165, 140 145, 160 135 C180 125, 195 135, 200 155 C190 160, 155 170, 140 180Z" fill="none" stroke="#d4af37" stroke-width="1.8" opacity="0.8" /> <path d="M260 180 C265 165, 260 145, 240 135 C220 125, 205 135, 200 155 C210 160, 245 170, 260 180Z" fill="none" stroke="#d4af37" stroke-width="1.8" opacity="0.8" /> <!-- Center Bloom --> <circle cx="200" cy="180" r="35" fill="none" stroke="#d4af37" stroke-width="2" opacity="0.9" /> <circle cx="200" cy="180" r="25" fill="none" stroke="#d4af37" stroke-width="1.5" opacity="0.85" /> <circle cx="200" cy="180" r="15" fill="#d4af37" opacity="0.3" /> <!-- Inner Petals Detail --> <path d="M200 145 C185 155, 175 165, 172 180 C170 190, 180 198, 195 200 C192 180, 195 160, 200 145Z" fill="none" stroke="#d4af37" stroke-width="2" opacity="0.9" /> <path d="M200 145 C215 155, 225 165, 228 180 C230 190, 220 198, 205 200 C208 180, 205 160, 200 145Z" fill="none" stroke="#d4af37" stroke-width="2" opacity="0.9" /> <!-- Elegant Stem --> <path d="M200 265 Q195 350, 190 500" stroke="#d4af37" stroke-width="3" opacity="0.9" /> <!-- PROMINENT GOLDEN KEY - Large and Diagonal --> <g transform="translate(240, 320) rotate(25)"><!-- Key Bow (Top) - Larger and more prominent -->
+        <circle cx="0" cy="0" r="22" fill="none" stroke="#d4af37" stroke-width="3" opacity="1" />
+        <circle cx="0" cy="0" r="14" fill="none" stroke="#d4af37" stroke-width="2.5" opacity="0.95" />
+        <circle cx="0" cy="0" r="7" fill="#d4af37" opacity="0.3" /> <!-- Decorative Details in Bow -->
+        <line x1="-10" y1="0" x2="10" y2="0" stroke="#d4af37" stroke-width="1.5" opacity="0.8" />
+        <line x1="0" y1="-10" x2="0" y2="10" stroke="#d4af37" stroke-width="1.5" opacity="0.8" /> <!-- Key Shaft - Longer and more visible -->
+        <rect x="-3" y="22" width="6" height="100" fill="#d4af37" opacity="0.95" />
+        <rect x="-2" y="22" width="4" height="100" fill="#f4d03f" opacity="0.6" /> <!-- Key Teeth (Bottom) - More elaborate -->
+        <rect x="-8" y="122" width="16" height="8" fill="#d4af37" opacity="0.95" />
+        <rect x="-8" y="130" width="8" height="12" fill="#d4af37" opacity="0.95" />
+        <rect x="0" y="135" width="8" height="12" fill="#d4af37" opacity="0.95" />
+        <rect x="-8" y="147" width="12" height="8" fill="#d4af37" opacity="0.95" /> <!-- Key Highlight -->
+        <rect x="-1" y="25" width="2" height="95" fill="#ffffff" opacity="0.3" />
+       </g> <!-- Large Leaves --> <path d="M190 300 Q165 315, 155 340 Q170 330, 188 320" fill="none" stroke="#d4af37" stroke-width="1.5" opacity="0.75" /> <path d="M190 300 Q215 315, 225 340 Q210 330, 192 320" fill="none" stroke="#d4af37" stroke-width="1.5" opacity="0.75" /> <path d="M188 380 Q160 395, 148 425 Q165 410, 186 395" fill="none" stroke="#d4af37" stroke-width="1.5" opacity="0.7" /> <path d="M188 380 Q216 395, 228 425 Q211 410, 190 395" fill="none" stroke="#d4af37" stroke-width="1.5" opacity="0.7" /> <!-- Accent Glow Lines --> <ellipse cx="200" cy="180" rx="100" ry="110" fill="none" stroke="#d4af37" stroke-width="0.5" opacity="0.2" /> <ellipse cx="200" cy="180" rx="120" ry="130" fill="none" stroke="#d4af37" stroke-width="0.3" opacity="0.15" />
+      </svg>
+     </div>
+    </div>
+   </section><!-- BRAND INTRODUCTION -->
+   <section class="brand-section">
+    <div class="brand-content">
+     <h2 class="section-title" id="brand-title">The Manhattan Flower Club</h2>
+     <p class="section-text" id="brand-text">A floral house defined by craftsmanship, exclusivity, and timeless elegance. Each arrangement is designed as an object of beauty and distinction.</p><a href="#about" class="btn btn-secondary" id="brand-btn">Learn More</a>
+    </div>
+   </section><!-- FEATURED COLLECTION -->
+   <section class="collection-section" id="collection">
+    <div class="collection-header">
+     <h2 class="section-title" id="collection-title">Featured Collection</h2>
+    </div>
+    <div class="collection-grid">
+     <article class="product-card">
+      <div class="product-image">
+       <svg viewbox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="100" r="40" fill="none" stroke="#d4af37" stroke-width="1.5" opacity="0.8" /> <path d="M100 60 C85 70, 75 80, 75 95 C75 105, 85 110, 100 108 C95 90, 97 75, 100 60Z" fill="none" stroke="#d4af37" stroke-width="1.5" opacity="0.9" /> <path d="M100 60 C115 70, 125 80, 125 95 C125 105, 115 110, 100 108 C105 90, 103 75, 100 60Z" fill="none" stroke="#d4af37" stroke-width="1.5" opacity="0.9" /> <circle cx="100" cy="95" r="12" fill="#d4af37" opacity="0.3" /> <path d="M100 108 L100 150" stroke="#d4af37" stroke-width="2" opacity="0.9" />
+       </svg>
+      </div>
+      <h3 class="product-name">Midnight Rose</h3><a href="#product-1" class="btn btn-secondary btn-small">Select Arrangement</a>
+     </article>
+     <article class="product-card">
+      <div class="product-image">
+       <svg viewbox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="90" r="35" fill="none" stroke="#d4af37" stroke-width="1.5" opacity="0.8" /> <path d="M100 55 C88 62, 80 72, 78 85 C77 95, 85 100, 95 100 C93 85, 95 70, 100 55Z" fill="none" stroke="#d4af37" stroke-width="1.5" opacity="0.9" /> <path d="M100 55 C112 62, 120 72, 122 85 C123 95, 115 100, 105 100 C107 85, 105 70, 100 55Z" fill="none" stroke="#d4af37" stroke-width="1.5" opacity="0.9" /> <circle cx="100" cy="90" r="10" fill="#d4af37" opacity="0.4" /> <path d="M100 100 L100 150" stroke="#d4af37" stroke-width="2" opacity="0.9" /> <path d="M100 120 Q85 125, 80 135" stroke="#d4af37" stroke-width="1.2" opacity="0.7" />
+       </svg>
+      </div>
+      <h3 class="product-name">Golden Peony</h3><a href="#product-2" class="btn btn-secondary btn-small">Select Arrangement</a>
+     </article>
+     <article class="product-card">
+      <div class="product-image">
+       <svg viewbox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="85" r="30" fill="none" stroke="#d4af37" stroke-width="1.5" opacity="0.8" /> <path d="M100 55 C90 60, 85 68, 85 78 C85 85, 90 88, 98 88 C96 78, 98 65, 100 55Z" fill="none" stroke="#d4af37" stroke-width="1.5" opacity="0.9" /> <circle cx="100" cy="85" r="8" fill="#d4af37" opacity="0.5" /> <path d="M100 93 L100 155" stroke="#d4af37" stroke-width="2" opacity="0.9" /> <path d="M100 110 Q115 115, 120 125" stroke="#d4af37" stroke-width="1.2" opacity="0.7" /> <path d="M100 130 Q82 133, 78 143" stroke="#d4af37" stroke-width="1.2" opacity="0.7" />
+       </svg>
+      </div>
+      <h3 class="product-name">Velvet Bloom</h3><a href="#product-3" class="btn btn-secondary btn-small">Select Arrangement</a>
+     </article>
+    </div>
+    <div class="collection-footer"><a href="#full-collection" class="btn btn-primary" id="collection-btn">View the Full Collection</a>
+    </div>
+   </section><!-- MEMBERSHIP SECTION -->
+   <section class="membership-section" id="membership">
+    <div class="membership-content">
+     <svg class="membership-icon" viewbox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="35" r="18" fill="none" stroke="#d4af37" stroke-width="2.5" /> <circle cx="50" cy="35" r="10" fill="none" stroke="#d4af37" stroke-width="2" /> <rect x="47" y="53" width="6" height="35" fill="#d4af37" /> <rect x="42" y="88" width="16" height="8" fill="#d4af37" /> <rect x="42" y="88" width="7" height="12" fill="#d4af37" /> <rect x="51" y="90" width="7" height="12" fill="#d4af37" />
+     </svg>
+     <h2 class="section-title" id="membership-title">A Private Floral Experience</h2>
+     <p class="section-text" id="membership-text">Members receive access to exclusive designs, seasonal releases, and bespoke arrangements crafted beyond the public collection.</p><a href="#request-access" class="btn btn-primary" id="membership-btn">Request Access</a>
+    </div>
+   </section><!-- CONCIERGE SECTION -->
+   <section class="concierge-section">
+    <div class="concierge-content">
+     <h2 class="section-title" id="concierge-title">Private Inquiries</h2>
+     <p class="section-text" id="concierge-text">Bespoke arrangements, private events, and corporate gifting handled with discretion and care.</p><a href="#inquiry" class="btn btn-secondary" id="concierge-btn">Submit Inquiry</a>
+    </div>
+   </section><!-- JOURNAL SECTION -->
+   <section class="journal-section">
+    <div class="journal-content">
+     <div class="journal-image">
+      <svg viewbox="0 0 300 400" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="150" cy="150" r="60" fill="none" stroke="#d4af37" stroke-width="2" opacity="0.7" /> <path d="M150 90 C130 100, 115 115, 112 135 C110 155, 125 165, 145 168 C142 140, 145 115, 150 90Z" fill="none" stroke="#d4af37" stroke-width="2" opacity="0.85" /> <path d="M150 90 C170 100, 185 115, 188 135 C190 155, 175 165, 155 168 C158 140, 155 115, 150 90Z" fill="none" stroke="#d4af37" stroke-width="2" opacity="0.85" /> <circle cx="150" cy="150" r="25" fill="none" stroke="#d4af37" stroke-width="2.5" opacity="0.9" /> <circle cx="150" cy="150" r="12" fill="#d4af37" opacity="0.4" /> <path d="M150 175 L150 320" stroke="#d4af37" stroke-width="2.5" opacity="0.9" /> <path d="M150 220 Q125 228, 118 245" stroke="#d4af37" stroke-width="1.5" opacity="0.75" /> <path d="M150 260 Q175 268, 182 285" stroke="#d4af37" stroke-width="1.5" opacity="0.75" />
+      </svg>
+     </div>
+     <div class="journal-text">
+      <h2 class="section-title" id="journal-title">Journal</h2>
+      <p class="section-text" id="journal-text">Insights, inspiration, and craftsmanship from the world of Manhattan Flower Club.</p><a href="#journal" class="btn btn-secondary" id="journal-btn">Read the Journal</a>
+     </div>
+    </div>
+   </section><!-- FOOTER -->
+   <footer class="footer">
+    <div class="footer-content">
+     <nav class="footer-links"><a href="#home" class="footer-link">Home</a> <a href="#collection" class="footer-link">The Collection</a> <a href="#about" class="footer-link">About</a> <a href="#journal" class="footer-link">Journal</a> <a href="#members" class="footer-link">Members</a> <a href="#inquiries" class="footer-link">Private Inquiries</a>
+     </nav>
+     <div class="footer-divider"></div>
+     <nav class="footer-legal"><a href="#shipping" class="footer-link">Shipping &amp; Care</a> <a href="#returns" class="footer-link">Returns &amp; Exchanges</a> <a href="#terms" class="footer-link">Terms &amp; Conditions</a> <a href="#privacy" class="footer-link">Privacy Policy</a> <a href="#imprint" class="footer-link">Imprint</a>
+     </nav>
+     <div class="footer-brand">
+      Manhattan Flower Club
+     </div>
+    </div>
+   </footer>
+  </div>
+  <script>
+    const defaultConfig = {
+      background_color: "#0a0a0a",
+      gold_color: "#d4af37",
+      text_color: "#c9c9c9",
+      button_bg_color: "#d4af37",
+      button_text_color: "#0a0a0a",
+      font_family: "Playfair Display",
+      font_size: 72,
+      hero_headline: "Where Luxury Blooms",
+      hero_subheadline: "Curated floral artistry for those who hold the key.",
+      hero_primary_btn: "Enter the Club",
+      hero_secondary_btn: "Discover the Collection",
+      brand_title: "The Manhattan Flower Club",
+      brand_text: "A floral house defined by craftsmanship, exclusivity, and timeless elegance. Each arrangement is designed as an object of beauty and distinction.",
+      brand_btn: "Learn More",
+      collection_title: "Featured Collection",
+      collection_btn: "View the Full Collection",
+      membership_title: "A Private Floral Experience",
+      membership_text: "Members receive access to exclusive designs, seasonal releases, and bespoke arrangements crafted beyond the public collection.",
+      membership_btn: "Request Access",
+      concierge_title: "Private Inquiries",
+      concierge_text: "Bespoke arrangements, private events, and corporate gifting handled with discretion and care.",
+      concierge_btn: "Submit Inquiry",
+      journal_title: "Journal",
+      journal_text: "Insights, inspiration, and craftsmanship from the world of Manhattan Flower Club.",
+      journal_btn: "Read the Journal"
+    };
+
+    async function onConfigChange(config) {
+      const backgroundColor = config.background_color || defaultConfig.background_color;
+      const goldColor = config.gold_color || defaultConfig.gold_color;
+      const textColor = config.text_color || defaultConfig.text_color;
+      const buttonBgColor = config.button_bg_color || defaultConfig.button_bg_color;
+      const buttonTextColor = config.button_text_color || defaultConfig.button_text_color;
+      const fontFamily = config.font_family || defaultConfig.font_family;
+      const fontSize = config.font_size || defaultConfig.font_size;
+
+      // Update backgrounds
+      document.querySelectorAll('.hero-section, .brand-section, .collection-section, .membership-section, .concierge-section, .journal-section, .footer').forEach(section => {
+        section.style.background = backgroundColor;
+      });
+
+      // Update hero
+      document.getElementById('hero-headline').textContent = config.hero_headline || defaultConfig.hero_headline;
+      document.getElementById('hero-headline').style.color = goldColor;
+      document.getElementById('hero-headline').style.fontFamily = `${fontFamily}, serif`;
+      document.getElementById('hero-headline').style.fontSize = `${fontSize}px`;
+      
+      document.getElementById('hero-subheadline').textContent = config.hero_subheadline || defaultConfig.hero_subheadline;
+      document.getElementById('hero-subheadline').style.color = textColor;
+      
+      document.getElementById('hero-primary-btn').textContent = config.hero_primary_btn || defaultConfig.hero_primary_btn;
+      document.getElementById('hero-primary-btn').style.background = buttonBgColor;
+      document.getElementById('hero-primary-btn').style.color = buttonTextColor;
+      
+      document.getElementById('hero-secondary-btn').textContent = config.hero_secondary_btn || defaultConfig.hero_secondary_btn;
+      document.getElementById('hero-secondary-btn').style.color = goldColor;
+      document.getElementById('hero-secondary-btn').style.borderColor = goldColor;
+
+      // Update brand section
+      document.getElementById('brand-title').textContent = config.brand_title || defaultConfig.brand_title;
+      document.getElementById('brand-title').style.color = goldColor;
+      document.getElementById('brand-title').style.fontFamily = `${fontFamily}, serif`;
+      document.getElementById('brand-title').style.fontSize = `${fontSize * 0.78}px`;
+      
+      document.getElementById('brand-text').textContent = config.brand_text || defaultConfig.brand_text;
+      document.getElementById('brand-text').style.color = textColor;
+      
+      document.getElementById('brand-btn').textContent = config.brand_btn || defaultConfig.brand_btn;
+      document.getElementById('brand-btn').style.color = goldColor;
+      document.getElementById('brand-btn').style.borderColor = goldColor;
+
+      // Update collection section
+      document.getElementById('collection-title').textContent = config.collection_title || defaultConfig.collection_title;
+      document.getElementById('collection-title').style.color = goldColor;
+      document.getElementById('collection-title').style.fontFamily = `${fontFamily}, serif`;
+      document.getElementById('collection-title').style.fontSize = `${fontSize * 0.78}px`;
+      
+      document.getElementById('collection-btn').textContent = config.collection_btn || defaultConfig.collection_btn;
+      document.getElementById('collection-btn').style.background = buttonBgColor;
+      document.getElementById('collection-btn').style.color = buttonTextColor;
+
+      // Update membership section
+      document.getElementById('membership-title').textContent = config.membership_title || defaultConfig.membership_title;
+      document.getElementById('membership-title').style.color = goldColor;
+      document.getElementById('membership-title').style.fontFamily = `${fontFamily}, serif`;
+      document.getElementById('membership-title').style.fontSize = `${fontSize * 0.78}px`;
+      
+      document.getElementById('membership-text').textContent = config.membership_text || defaultConfig.membership_text;
+      document.getElementById('membership-text').style.color = textColor;
+      
+      document.getElementById('membership-btn').textContent = config.membership_btn || defaultConfig.membership_btn;
+      document.getElementById('membership-btn').style.background = buttonBgColor;
+      document.getElementById('membership-btn').style.color = buttonTextColor;
+
+      // Update concierge section
+      document.getElementById('concierge-title').textContent = config.concierge_title || defaultConfig.concierge_title;
+      document.getElementById('concierge-title').style.color = goldColor;
+      document.getElementById('concierge-title').style.fontFamily = `${fontFamily}, serif`;
+      document.getElementById('concierge-title').style.fontSize = `${fontSize * 0.78}px`;
+      
+      document.getElementById('concierge-text').textContent = config.concierge_text || defaultConfig.concierge_text;
+      document.getElementById('concierge-text').style.color = textColor;
+      
+      document.getElementById('concierge-btn').textContent = config.concierge_btn || defaultConfig.concierge_btn;
+      document.getElementById('concierge-btn').style.color = goldColor;
+      document.getElementById('concierge-btn').style.borderColor = goldColor;
+
+      // Update journal section
+      document.getElementById('journal-title').textContent = config.journal_title || defaultConfig.journal_title;
+      document.getElementById('journal-title').style.color = goldColor;
+      document.getElementById('journal-title').style.fontFamily = `${fontFamily}, serif`;
+      document.getElementById('journal-title').style.fontSize = `${fontSize * 0.78}px`;
+      
+      document.getElementById('journal-text').textContent = config.journal_text || defaultConfig.journal_text;
+      document.getElementById('journal-text').style.color = textColor;
+      
+      document.getElementById('journal-btn').textContent = config.journal_btn || defaultConfig.journal_btn;
+      document.getElementById('journal-btn').style.color = goldColor;
+      document.getElementById('journal-btn').style.borderColor = goldColor;
+
+      // Update all SVG gold elements
+      document.querySelectorAll('svg path[stroke="#d4af37"], svg circle[stroke="#d4af37"], svg line[stroke="#d4af37"], svg rect[fill="#d4af37"], svg ellipse[stroke="#d4af37"]').forEach(el => {
+        if (el.hasAttribute('stroke')) el.setAttribute('stroke', goldColor);
+        if (el.hasAttribute('fill') && el.getAttribute('fill') !== 'none') el.setAttribute('fill', goldColor);
+      });
+
+      // Update product names
+      document.querySelectorAll('.product-name').forEach(name => {
+        name.style.color = goldColor;
+        name.style.fontFamily = `${fontFamily}, serif`;
+      });
+
+      // Update section titles and text
+      document.querySelectorAll('.section-title').forEach(title => {
+        title.style.color = goldColor;
+        title.style.fontFamily = `${fontFamily}, serif`;
+      });
+      
+      document.querySelectorAll('.section-text').forEach(text => {
+        text.style.color = textColor;
+      });
+
+      // Update footer
+      document.querySelectorAll('.footer-link').forEach(link => {
+        link.style.color = goldColor;
+      });
+      
+      document.querySelector('.footer-brand').style.color = goldColor;
+    }
+
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [
+          {
+            get: () => config.background_color || defaultConfig.background_color,
+            set: (value) => {
+              config.background_color = value;
+              if (window.elementSdk) {
+                window.elementSdk.setConfig({ background_color: value });
+              }
+            }
+          },
+          {
+            get: () => config.gold_color || defaultConfig.gold_color,
+            set: (value) => {
+              config.gold_color = value;
+              if (window.elementSdk) {
+                window.elementSdk.setConfig({ gold_color: value });
+              }
+            }
+          },
+          {
+            get: () => config.text_color || defaultConfig.text_color,
+            set: (value) => {
+              config.text_color = value;
+              if (window.elementSdk) {
+                window.elementSdk.setConfig({ text_color: value });
+              }
+            }
+          },
+          {
+            get: () => config.button_bg_color || defaultConfig.button_bg_color,
+            set: (value) => {
+              config.button_bg_color = value;
+              if (window.elementSdk) {
+                window.elementSdk.setConfig({ button_bg_color: value });
+              }
+            }
+          },
+          {
+            get: () => config.button_text_color || defaultConfig.button_text_color,
+            set: (value) => {
+              config.button_text_color = value;
+              if (window.elementSdk) {
+                window.elementSdk.setConfig({ button_text_color: value });
+              }
+            }
+          }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => config.font_family || defaultConfig.font_family,
+          set: (value) => {
+            config.font_family = value;
+            if (window.elementSdk) {
+              window.elementSdk.setConfig({ font_family: value });
+            }
+          }
+        },
+        fontSizeable: {
+          get: () => config.font_size || defaultConfig.font_size,
+          set: (value) => {
+            config.font_size = value;
+            if (window.elementSdk) {
+              window.elementSdk.setConfig({ font_size: value });
+            }
+          }
+        }
+      };
+    }
+
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ["hero_headline", config.hero_headline || defaultConfig.hero_headline],
+        ["hero_subheadline", config.hero_subheadline || defaultConfig.hero_subheadline],
+        ["hero_primary_btn", config.hero_primary_btn || defaultConfig.hero_primary_btn],
+        ["hero_secondary_btn", config.hero_secondary_btn || defaultConfig.hero_secondary_btn],
+        ["brand_title", config.brand_title || defaultConfig.brand_title],
+        ["brand_text", config.brand_text || defaultConfig.brand_text],
+        ["brand_btn", config.brand_btn || defaultConfig.brand_btn],
+        ["collection_title", config.collection_title || defaultConfig.collection_title],
+        ["collection_btn", config.collection_btn || defaultConfig.collection_btn],
+        ["membership_title", config.membership_title || defaultConfig.membership_title],
+        ["membership_text", config.membership_text || defaultConfig.membership_text],
+        ["membership_btn", config.membership_btn || defaultConfig.membership_btn],
+        ["concierge_title", config.concierge_title || defaultConfig.concierge_title],
+        ["concierge_text", config.concierge_text || defaultConfig.concierge_text],
+        ["concierge_btn", config.concierge_btn || defaultConfig.concierge_btn],
+        ["journal_title", config.journal_title || defaultConfig.journal_title],
+        ["journal_text", config.journal_text || defaultConfig.journal_text],
+        ["journal_btn", config.journal_btn || defaultConfig.journal_btn]
+      ]);
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9b206413f396d0e2',t:'MTc2NjQxNDYwMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
