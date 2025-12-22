@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manhattan Flower Club - Where Luxury Blooms</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #0a0a0a;
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+    
+    .serif-font {
+      font-family: 'Cormorant Garamond', serif;
+    }
+    
+    .gold-gradient {
+      background: linear-gradient(135deg, #d4af37 0%, #f4e5b0 50%, #d4af37 100%);
+    }
+    
+    .text-gold {
+      color: #d4af37;
+    }
+    
+    .bg-deep-black {
+      background: #0a0a0a;
+    }
+    
+    .hero-section {
+      position: relative;
+      min-height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    
+    .hero-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(ellipse at center, #1a1510 0%, #0a0a0a 70%);
+    }
+    
+    .gold-glow {
+      box-shadow: 0 0 40px rgba(212, 175, 55, 0.3);
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, #d4af37 0%, #f4e5b0 50%, #d4af37 100%);
+      color: #0a0a0a;
+      padding: 16px 48px;
+      border: none;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: #d4af37;
+      padding: 16px 48px;
+      border: 2px solid #d4af37;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .btn-secondary:hover {
+      background: rgba(212, 175, 55, 0.1);
+      transform: translateY(-2px);
+    }
+    
+    .product-card {
+      background: #151515;
+      border: 1px solid #2a2a2a;
+      transition: all 0.4s ease;
+      overflow: hidden;
+    }
+    
+    .product-card:hover {
+      border-color: #d4af37;
+      transform: translateY(-8px);
+      box-shadow: 0 12px 40px rgba(212, 175, 55, 0.2);
+    }
+    
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, #d4af37 50%, transparent 100%);
+      margin: 80px auto;
+      max-width: 300px;
+    }
+    
+    .footer-link {
+      color: #d4af37;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+    
+    .footer-link:hover {
+      color: #f4e5b0;
+    }
+    
+    .key-pattern {
+      opacity: 0.05;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: repeating-linear-gradient(45deg, transparent, transparent 100px, #d4af37 100px, #d4af37 101px);
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full">
+  <div id="app" class="w-full h-full overflow-auto"><!-- SECTION 1: HERO BANNER -->
+   <section class="hero-section">
+    <div class="hero-background"></div><!-- Hero Floral & Key Illustration -->
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%; max-width: 800px; opacity: 0.4;">
+     <svg viewbox="0 0 800 800" xmlns="http://www.w3.org/2000/svg"><!-- Golden Rose --> <defs>
+       <radialgradient id="goldGradient" cx="50%" cy="50%">
+        <stop offset="0%" style="stop-color:#f4e5b0;stop-opacity:1" />
+        <stop offset="50%" style="stop-color:#d4af37;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#b8942a;stop-opacity:1" />
+       </radialgradient>
+       <filter id="glow">
+        <fegaussianblur stddeviation="4" result="coloredBlur" />
+        <femerge>
+         <femergenode in="coloredBlur" />
+         <femergenode in="SourceGraphic" />
+        </femerge>
+       </filter>
+      </defs> <!-- Rose Petals --> <ellipse cx="400" cy="350" rx="120" ry="140" fill="url(#goldGradient)" opacity="0.9" filter="url(#glow)" /> <ellipse cx="320" cy="330" rx="100" ry="120" fill="url(#goldGradient)" opacity="0.85" filter="url(#glow)" /> <ellipse cx="480" cy="330" rx="100" ry="120" fill="url(#goldGradient)" opacity="0.85" filter="url(#glow)" /> <ellipse cx="360" cy="270" rx="90" ry="100" fill="url(#goldGradient)" opacity="0.8" filter="url(#glow)" /> <ellipse cx="440" cy="270" rx="90" ry="100" fill="url(#goldGradient)" opacity="0.8" filter="url(#glow)" /> <ellipse cx="400" cy="240" rx="70" ry="80" fill="url(#goldGradient)" opacity="0.75" filter="url(#glow)" /> <!-- Rose Center --> <circle cx="400" cy="310" r="45" fill="#f4e5b0" opacity="0.95" filter="url(#glow)" /> <circle cx="400" cy="310" r="30" fill="#d4af37" opacity="0.9" /> <!-- Stem --> <path d="M 400 450 Q 395 550 390 650" stroke="url(#goldGradient)" stroke-width="8" fill="none" opacity="0.8" filter="url(#glow)" /> <!-- Leaves --> <ellipse cx="360" cy="520" rx="35" ry="60" fill="url(#goldGradient)" opacity="0.6" transform="rotate(-30 360 520)" /> <ellipse cx="420" cy="580" rx="35" ry="60" fill="url(#goldGradient)" opacity="0.6" transform="rotate(25 420 580)" /> <!-- Golden Key (Diagonal across composition) --> <g transform="translate(250, 200) rotate(35)" filter="url(#glow)"><!-- Key Head (ornate circle) -->
+       <circle cx="0" cy="0" r="35" fill="none" stroke="#d4af37" stroke-width="6" />
+       <circle cx="0" cy="0" r="25" fill="none" stroke="#d4af37" stroke-width="4" />
+       <path d="M -10 -10 L 10 10 M 10 -10 L -10 10" stroke="#d4af37" stroke-width="3" /> <!-- Key Shaft -->
+       <rect x="30" y="-6" width="280" height="12" fill="url(#goldGradient)" opacity="0.95" />
+       <rect x="35" y="-4" width="270" height="8" fill="#f4e5b0" opacity="0.7" /> <!-- Key Teeth -->
+       <rect x="280" y="-6" width="15" height="25" fill="url(#goldGradient)" />
+       <rect x="300" y="-6" width="15" height="35" fill="url(#goldGradient)" />
+       <rect x="320" y="-6" width="15" height="20" fill="url(#goldGradient)" /> <!-- Decorative key details -->
+       <circle cx="100" cy="0" r="8" fill="#d4af37" opacity="0.8" />
+       <circle cx="200" cy="0" r="8" fill="#d4af37" opacity="0.8" />
+      </g>
+     </svg>
+    </div><!-- Hero Content -->
+    <div style="position: relative; z-index: 10; text-align: center; padding: 60px 20px; max-width: 900px; margin: 0 auto;">
+     <h1 id="hero-headline" class="serif-font text-gold" style="font-size: 72px; font-weight: 300; letter-spacing: 3px; margin-bottom: 24px; line-height: 1.2;">Where Luxury Blooms</h1>
+     <p id="hero-subheadline" style="font-size: 18px; letter-spacing: 2px; color: #cccccc; margin-bottom: 48px; font-weight: 300;">Curated floral artistry for those who hold the key.</p>
+     <div style="display: flex; gap: 24px; justify-content: center; flex-wrap: wrap;"><button id="hero-primary-btn" class="btn-primary">Enter the Club</button> <button id="hero-secondary-btn" class="btn-secondary">Discover the Collection</button>
+     </div>
+    </div>
+   </section><!-- SECTION 2: BRAND INTRODUCTION -->
+   <section style="background: linear-gradient(to bottom, #1a1510 0%, #0a0a0a 100%); padding: 120px 20px; position: relative;">
+    <div style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 200px; height: 100px; opacity: 0.1;">
+     <svg viewbox="0 0 200 100" xmlns="http://www.w3.org/2000/svg"><ellipse cx="100" cy="50" rx="80" ry="40" fill="#d4af37" /> <ellipse cx="60" cy="45" rx="50" ry="35" fill="#d4af37" opacity="0.7" /> <ellipse cx="140" cy="45" rx="50" ry="35" fill="#d4af37" opacity="0.7" />
+     </svg>
+    </div>
+    <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+     <h2 id="brand-title" class="serif-font text-gold" style="font-size: 56px; font-weight: 300; letter-spacing: 2px; margin-bottom: 32px;">The Manhattan Flower Club</h2>
+     <div class="section-divider"></div>
+     <p id="brand-text" style="font-size: 18px; line-height: 1.8; color: #cccccc; margin-bottom: 48px; font-weight: 300; letter-spacing: 0.5px;">A floral house defined by craftsmanship, exclusivity, and timeless elegance. Each arrangement is designed as an object of beauty and distinction.</p><button id="brand-cta-btn" class="btn-secondary">Learn More</button>
+    </div>
+   </section><!-- SECTION 3: FEATURED COLLECTION -->
+   <section style="background: #0a0a0a; padding: 120px 20px;">
+    <div style="max-width: 1400px; margin: 0 auto;">
+     <h2 id="collection-title" class="serif-font text-gold" style="font-size: 48px; font-weight: 300; text-align: center; margin-bottom: 80px; letter-spacing: 2px;">Featured Collection</h2>
+     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; margin-bottom: 60px;"><!-- Product Card 1 -->
+      <div class="product-card" style="padding: 0; border-radius: 0;">
+       <div style="height: 400px; background: linear-gradient(135deg, #1a1510 0%, #0f0f0f 100%); display: flex; align-items: center; justify-content: center; border-bottom: 2px solid #d4af37;">
+        <svg width="200" height="280" viewbox="0 0 200 280" xmlns="http://www.w3.org/2000/svg"><defs>
+          <radialgradient id="peonyGold" cx="50%" cy="40%">
+           <stop offset="0%" style="stop-color:#f4e5b0;stop-opacity:1" />
+           <stop offset="70%" style="stop-color:#d4af37;stop-opacity:1" />
+           <stop offset="100%" style="stop-color:#b8942a;stop-opacity:0.8" />
+          </radialgradient>
+         </defs> <!-- Peony Petals --> <ellipse cx="100" cy="100" rx="70" ry="80" fill="url(#peonyGold)" opacity="0.9" /> <ellipse cx="60" cy="90" rx="55" ry="65" fill="url(#peonyGold)" opacity="0.85" /> <ellipse cx="140" cy="90" rx="55" ry="65" fill="url(#peonyGold)" opacity="0.85" /> <ellipse cx="80" cy="60" rx="45" ry="55" fill="url(#peonyGold)" opacity="0.8" /> <ellipse cx="120" cy="60" rx="45" ry="55" fill="url(#peonyGold)" opacity="0.8" /> <circle cx="100" cy="95" r="35" fill="#f4e5b0" opacity="0.95" /> <!-- Stem --> <path d="M 100 160 L 100 260" stroke="#d4af37" stroke-width="6" opacity="0.7" />
+        </svg>
+       </div>
+       <div style="padding: 32px; text-align: center;">
+        <h3 class="serif-font text-gold" style="font-size: 28px; font-weight: 400; margin-bottom: 20px;">Golden Peony</h3><button class="btn-secondary" style="padding: 12px 32px; font-size: 12px;">Select Arrangement</button>
+       </div>
+      </div><!-- Product Card 2 -->
+      <div class="product-card" style="padding: 0; border-radius: 0;">
+       <div style="height: 400px; background: linear-gradient(135deg, #1a1510 0%, #0f0f0f 100%); display: flex; align-items: center; justify-content: center; border-bottom: 2px solid #d4af37;">
+        <svg width="200" height="280" viewbox="0 0 200 280" xmlns="http://www.w3.org/2000/svg"><!-- Orchid --> <ellipse cx="100" cy="80" rx="60" ry="70" fill="url(#peonyGold)" opacity="0.9" /> <ellipse cx="70" cy="100" rx="45" ry="55" fill="url(#peonyGold)" opacity="0.85" /> <ellipse cx="130" cy="100" rx="45" ry="55" fill="url(#peonyGold)" opacity="0.85" /> <ellipse cx="100" cy="130" rx="40" ry="50" fill="url(#peonyGold)" opacity="0.8" /> <circle cx="100" cy="95" r="25" fill="#f4e5b0" opacity="0.95" /> <path d="M 100 150 L 100 260" stroke="#d4af37" stroke-width="5" opacity="0.7" />
+        </svg>
+       </div>
+       <div style="padding: 32px; text-align: center;">
+        <h3 class="serif-font text-gold" style="font-size: 28px; font-weight: 400; margin-bottom: 20px;">Midnight Orchid</h3><button class="btn-secondary" style="padding: 12px 32px; font-size: 12px;">Select Arrangement</button>
+       </div>
+      </div><!-- Product Card 3 -->
+      <div class="product-card" style="padding: 0; border-radius: 0;">
+       <div style="height: 400px; background: linear-gradient(135deg, #1a1510 0%, #0f0f0f 100%); display: flex; align-items: center; justify-content: center; border-bottom: 2px solid #d4af37;">
+        <svg width="200" height="280" viewbox="0 0 200 280" xmlns="http://www.w3.org/2000/svg"><!-- Tulip --> <ellipse cx="100" cy="90" rx="50" ry="80" fill="url(#peonyGold)" opacity="0.9" /> <ellipse cx="75" cy="85" rx="35" ry="60" fill="url(#peonyGold)" opacity="0.85" /> <ellipse cx="125" cy="85" rx="35" ry="60" fill="url(#peonyGold)" opacity="0.85" /> <circle cx="100" cy="100" r="30" fill="#f4e5b0" opacity="0.9" /> <path d="M 100 140 L 100 260" stroke="#d4af37" stroke-width="5" opacity="0.7" /> <ellipse cx="85" cy="190" rx="25" ry="45" fill="url(#peonyGold)" opacity="0.5" transform="rotate(-20 85 190)" />
+        </svg>
+       </div>
+       <div style="padding: 32px; text-align: center;">
+        <h3 class="serif-font text-gold" style="font-size: 28px; font-weight: 400; margin-bottom: 20px;">Gilded Tulip</h3><button class="btn-secondary" style="padding: 12px 32px; font-size: 12px;">Select Arrangement</button>
+       </div>
+      </div>
+     </div>
+     <div style="text-align: center;"><button id="collection-cta-btn" class="btn-primary">View the Full Collection</button>
+     </div>
+    </div>
+   </section><!-- SECTION 4: EXCLUSIVITY / MEMBERSHIP -->
+   <section style="background: #0a0a0a; padding: 120px 20px; position: relative; overflow: hidden;">
+    <div class="key-pattern"></div>
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; height: 100%; opacity: 0.03;">
+     <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><pattern id="keyPattern" x="0" y="0" width="200" height="200" patternunits="userSpaceOnUse">
+       <g transform="translate(100, 100) rotate(45)">
+        <circle cx="0" cy="0" r="15" fill="none" stroke="#d4af37" stroke-width="2" />
+        <rect x="12" y="-3" width="60" height="6" fill="#d4af37" />
+        <rect x="65" y="-3" width="5" height="10" fill="#d4af37" />
+        <rect x="72" y="-3" width="5" height="15" fill="#d4af37" />
+       </g>
+      </pattern> <rect width="100%" height="100%" fill="url(#keyPattern)" />
+     </svg>
+    </div>
+    <div style="max-width: 900px; margin: 0 auto; text-align: center; position: relative; z-index: 10;">
+     <h2 id="membership-title" class="serif-font text-gold" style="font-size: 56px; font-weight: 300; letter-spacing: 2px; margin-bottom: 32px;">A Private Floral Experience</h2>
+     <div class="section-divider"></div>
+     <p id="membership-text" style="font-size: 18px; line-height: 1.8; color: #cccccc; margin-bottom: 48px; font-weight: 300; letter-spacing: 0.5px; max-width: 700px; margin-left: auto; margin-right: auto;">Members receive access to exclusive designs, seasonal releases, and bespoke arrangements crafted beyond the public collection.</p><button id="membership-cta-btn" class="btn-primary">Request Access</button>
+    </div>
+   </section><!-- SECTION 5: FLORAL CONCIERGE -->
+   <section style="background: #0a0a0a; padding: 120px 20px; position: relative;">
+    <div style="position: absolute; bottom: 20px; right: 40px; width: 150px; height: 150px; opacity: 0.08;">
+     <svg viewbox="0 0 150 150" xmlns="http://www.w3.org/2000/svg"><ellipse cx="75" cy="60" rx="50" ry="55" fill="#d4af37" opacity="0.8" /> <ellipse cx="50" cy="55" rx="35" ry="40" fill="#d4af37" opacity="0.7" /> <ellipse cx="100" cy="55" rx="35" ry="40" fill="#d4af37" opacity="0.7" /> <circle cx="75" cy="60" r="25" fill="#f4e5b0" opacity="0.9" /> <path d="M 75 90 L 75 140" stroke="#d4af37" stroke-width="4" opacity="0.6" />
+     </svg>
+    </div>
+    <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+     <h2 id="concierge-title" class="serif-font text-gold" style="font-size: 56px; font-weight: 300; letter-spacing: 2px; margin-bottom: 32px;">Private Inquiries</h2>
+     <div class="section-divider"></div>
+     <p id="concierge-text" style="font-size: 18px; line-height: 1.8; color: #cccccc; margin-bottom: 48px; font-weight: 300; letter-spacing: 0.5px;">Bespoke arrangements, private events, and corporate gifting handled with discretion and care.</p><button id="concierge-cta-btn" class="btn-secondary">Submit Inquiry</button>
+    </div>
+   </section><!-- SECTION 6: JOURNAL -->
+   <section style="background: linear-gradient(to bottom, #0a0a0a 0%, #121212 100%); padding: 120px 20px;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+     <h2 id="journal-title" class="serif-font text-gold" style="font-size: 56px; font-weight: 300; text-align: center; margin-bottom: 32px; letter-spacing: 2px;">Journal</h2>
+     <p id="journal-text" style="font-size: 18px; text-align: center; color: #cccccc; margin-bottom: 60px; font-weight: 300; letter-spacing: 0.5px;">Insights, inspiration, and craftsmanship from the world of Manhattan Flower Club.</p>
+     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 48px; margin-bottom: 60px;"><!-- Journal Entry 1 -->
+      <div style="background: #151515; border: 1px solid #2a2a2a; overflow: hidden; transition: all 0.3s ease;">
+       <div style="height: 300px; background: linear-gradient(135deg, #1a1510 0%, #0f0f0f 100%); display: flex; align-items: center; justify-content: center;">
+        <svg width="180" height="220" viewbox="0 0 180 220" xmlns="http://www.w3.org/2000/svg"><ellipse cx="90" cy="80" rx="55" ry="65" fill="url(#peonyGold)" opacity="0.9" /> <ellipse cx="65" cy="75" rx="40" ry="50" fill="url(#peonyGold)" opacity="0.85" /> <ellipse cx="115" cy="75" rx="40" ry="50" fill="url(#peonyGold)" opacity="0.85" /> <circle cx="90" cy="80" r="28" fill="#f4e5b0" opacity="0.95" /> <path d="M 90 120 L 90 200" stroke="#d4af37" stroke-width="5" opacity="0.7" />
+        </svg>
+       </div>
+       <div style="padding: 32px;">
+        <p style="font-size: 12px; letter-spacing: 2px; color: #d4af37; margin-bottom: 12px; text-transform: uppercase;">The Art of Composition</p>
+        <h3 class="serif-font" style="font-size: 26px; color: #ffffff; margin-bottom: 16px; font-weight: 400;">Crafting Timeless Arrangements</h3>
+        <p style="font-size: 15px; line-height: 1.7; color: #aaaaaa; font-weight: 300;">Exploring the balance between structure and spontaneity in luxury floral design.</p>
+       </div>
+      </div><!-- Journal Entry 2 -->
+      <div style="background: #151515; border: 1px solid #2a2a2a; overflow: hidden; transition: all 0.3s ease;">
+       <div style="height: 300px; background: linear-gradient(135deg, #1a1510 0%, #0f0f0f 100%); display: flex; align-items: center; justify-content: center;">
+        <svg width="180" height="220" viewbox="0 0 180 220" xmlns="http://www.w3.org/2000/svg"><ellipse cx="90" cy="85" rx="48" ry="75" fill="url(#peonyGold)" opacity="0.9" /> <ellipse cx="68" cy="80" rx="32" ry="55" fill="url(#peonyGold)" opacity="0.85" /> <ellipse cx="112" cy="80" rx="32" ry="55" fill="url(#peonyGold)" opacity="0.85" /> <circle cx="90" cy="90" r="26" fill="#f4e5b0" opacity="0.9" /> <path d="M 90 130 L 90 200" stroke="#d4af37" stroke-width="5" opacity="0.7" />
+        </svg>
+       </div>
+       <div style="padding: 32px;">
+        <p style="font-size: 12px; letter-spacing: 2px; color: #d4af37; margin-bottom: 12px; text-transform: uppercase;">Seasonal Exclusives</p>
+        <h3 class="serif-font" style="font-size: 26px; color: #ffffff; margin-bottom: 16px; font-weight: 400;">Spring 2024 Collection</h3>
+        <p style="font-size: 15px; line-height: 1.7; color: #aaaaaa; font-weight: 300;">A preview of our most anticipated arrangements crafted for discerning members.</p>
+       </div>
+      </div>
+     </div>
+     <div style="text-align: center;"><button id="journal-cta-btn" class="btn-secondary">Read the Journal</button>
+     </div>
+    </div>
+   </section><!-- SECTION 7: FOOTER -->
+   <footer style="background: #0a0a0a; border-top: 1px solid #2a2a2a; padding: 80px 20px 40px;">
+    <div style="max-width: 1200px; margin: 0 auto;"><!-- Logo / Brand Mark -->
+     <div style="text-align: center; margin-bottom: 48px;">
+      <h3 class="serif-font text-gold" style="font-size: 36px; font-weight: 300; letter-spacing: 3px; margin-bottom: 8px;">Manhattan Flower Club</h3>
+      <div style="width: 60px; height: 1px; background: #d4af37; margin: 0 auto;"></div>
+     </div><!-- Main Footer Links -->
+     <nav style="text-align: center; margin-bottom: 40px;"><a href="#" class="footer-link" style="margin: 0 20px;">Home</a> <span style="color: #444444;">·</span> <a href="#" class="footer-link" style="margin: 0 20px;">The Collection</a> <span style="color: #444444;">·</span> <a href="#" class="footer-link" style="margin: 0 20px;">About</a> <span style="color: #444444;">·</span> <a href="#" class="footer-link" style="margin: 0 20px;">Journal</a> <span style="color: #444444;">·</span> <a href="#" class="footer-link" style="margin: 0 20px;">Members</a> <span style="color: #444444;">·</span> <a href="#" class="footer-link" style="margin: 0 20px;">Private Inquiries</a>
+     </nav>
+     <div style="height: 1px; background: linear-gradient(90deg, transparent 0%, #d4af37 50%, transparent 100%); margin: 40px auto; max-width: 600px;"></div><!-- Legal Links -->
+     <nav style="text-align: center; margin-bottom: 40px;"><a href="#" class="footer-link" style="margin: 0 16px; font-size: 12px;">Shipping &amp; Care</a> <span style="color: #444444; font-size: 12px;">·</span> <a href="#" class="footer-link" style="margin: 0 16px; font-size: 12px;">Returns &amp; Exchanges</a> <span style="color: #444444; font-size: 12px;">·</span> <a href="#" class="footer-link" style="margin: 0 16px; font-size: 12px;">Terms &amp; Conditions</a> <span style="color: #444444; font-size: 12px;">·</span> <a href="#" class="footer-link" style="margin: 0 16px; font-size: 12px;">Privacy Policy</a> <span style="color: #444444; font-size: 12px;">·</span> <a href="#" class="footer-link" style="margin: 0 16px; font-size: 12px;">Imprint</a>
+     </nav><!-- Copyright -->
+     <div style="text-align: center; padding-top: 24px; border-top: 1px solid #1a1a1a;">
+      <p style="font-size: 12px; color: #666666; letter-spacing: 1px;">© 2024 Manhattan Flower Club. All rights reserved.</p>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <script>
+    const defaultConfig = {
+      background_color: "#0a0a0a",
+      gold_accent: "#d4af37",
+      light_gold: "#f4e5b0",
+      text_color: "#ffffff",
+      secondary_text: "#cccccc",
+      font_family: "Cormorant Garamond",
+      font_size: 16,
+      hero_headline: "Where Luxury Blooms",
+      hero_subheadline: "Curated floral artistry for those who hold the key.",
+      hero_primary_cta: "Enter the Club",
+      hero_secondary_cta: "Discover the Collection",
+      brand_title: "The Manhattan Flower Club",
+      brand_text: "A floral house defined by craftsmanship, exclusivity, and timeless elegance. Each arrangement is designed as an object of beauty and distinction.",
+      brand_cta: "Learn More",
+      collection_title: "Featured Collection",
+      collection_cta: "View the Full Collection",
+      membership_title: "A Private Floral Experience",
+      membership_text: "Members receive access to exclusive designs, seasonal releases, and bespoke arrangements crafted beyond the public collection.",
+      membership_cta: "Request Access",
+      concierge_title: "Private Inquiries",
+      concierge_text: "Bespoke arrangements, private events, and corporate gifting handled with discretion and care.",
+      concierge_cta: "Submit Inquiry",
+      journal_title: "Journal",
+      journal_text: "Insights, inspiration, and craftsmanship from the world of Manhattan Flower Club.",
+      journal_cta: "Read the Journal"
+    };
+
+    async function onConfigChange(config) {
+      const customFont = config.font_family || defaultConfig.font_family;
+      const baseFontStack = 'serif';
+      const baseSize = config.font_size || defaultConfig.font_size;
+      
+      const backgroundColor = config.background_color || defaultConfig.background_color;
+      const goldAccent = config.gold_accent || defaultConfig.gold_accent;
+      const lightGold = config.light_gold || defaultConfig.light_gold;
+      const textColor = config.text_color || defaultConfig.text_color;
+      const secondaryText = config.secondary_text || defaultConfig.secondary_text;
+      
+      // Apply background color
+      document.body.style.backgroundColor = backgroundColor;
+      
+      // Apply font to serif elements
+      const serifElements = document.querySelectorAll('.serif-font');
+      serifElements.forEach(el => {
+        el.style.fontFamily = `${customFont}, ${baseFontStack}`;
+      });
+      
+      // Apply gold accent colors
+      const goldTextElements = document.querySelectorAll('.text-gold');
+      goldTextElements.forEach(el => {
+        el.style.color = goldAccent;
+      });
+      
+      // Update text color
+      document.body.style.color = textColor;
+      
+      // Apply font sizes proportionally
+      document.getElementById('hero-headline').style.fontSize = `${baseSize * 4.5}px`;
+      document.getElementById('hero-subheadline').style.fontSize = `${baseSize * 1.125}px`;
+      document.getElementById('brand-title').style.fontSize = `${baseSize * 3.5}px`;
+      document.getElementById('brand-text').style.fontSize = `${baseSize * 1.125}px`;
+      document.getElementById('collection-title').style.fontSize = `${baseSize * 3}px`;
+      document.getElementById('membership-title').style.fontSize = `${baseSize * 3.5}px`;
+      document.getElementById('membership-text').style.fontSize = `${baseSize * 1.125}px`;
+      document.getElementById('concierge-title').style.fontSize = `${baseSize * 3.5}px`;
+      document.getElementById('concierge-text').style.fontSize = `${baseSize * 1.125}px`;
+      document.getElementById('journal-title').style.fontSize = `${baseSize * 3.5}px`;
+      document.getElementById('journal-text').style.fontSize = `${baseSize * 1.125}px`;
+      
+      // Apply button colors
+      const primaryButtons = document.querySelectorAll('.btn-primary');
+      primaryButtons.forEach(btn => {
+        btn.style.background = `linear-gradient(135deg, ${goldAccent} 0%, ${lightGold} 50%, ${goldAccent} 100%)`;
+        btn.style.color = backgroundColor;
+      });
+      
+      const secondaryButtons = document.querySelectorAll('.btn-secondary');
+      secondaryButtons.forEach(btn => {
+        btn.style.borderColor = goldAccent;
+        btn.style.color = goldAccent;
+      });
+      
+      // Update footer links
+      const footerLinks = document.querySelectorAll('.footer-link');
+      footerLinks.forEach(link => {
+        link.style.color = goldAccent;
+      });
+      
+      // Update text content
+      document.getElementById('hero-headline').textContent = config.hero_headline || defaultConfig.hero_headline;
+      document.getElementById('hero-subheadline').textContent = config.hero_subheadline || defaultConfig.hero_subheadline;
+      document.getElementById('hero-primary-btn').textContent = config.hero_primary_cta || defaultConfig.hero_primary_cta;
+      document.getElementById('hero-secondary-btn').textContent = config.hero_secondary_cta || defaultConfig.hero_secondary_cta;
+      document.getElementById('brand-title').textContent = config.brand_title || defaultConfig.brand_title;
+      document.getElementById('brand-text').textContent = config.brand_text || defaultConfig.brand_text;
+      document.getElementById('brand-cta-btn').textContent = config.brand_cta || defaultConfig.brand_cta;
+      document.getElementById('collection-title').textContent = config.collection_title || defaultConfig.collection_title;
+      document.getElementById('collection-cta-btn').textContent = config.collection_cta || defaultConfig.collection_cta;
+      document.getElementById('membership-title').textContent = config.membership_title || defaultConfig.membership_title;
+      document.getElementById('membership-text').textContent = config.membership_text || defaultConfig.membership_text;
+      document.getElementById('membership-cta-btn').textContent = config.membership_cta || defaultConfig.membership_cta;
+      document.getElementById('concierge-title').textContent = config.concierge_title || defaultConfig.concierge_title;
+      document.getElementById('concierge-text').textContent = config.concierge_text || defaultConfig.concierge_text;
+      document.getElementById('concierge-cta-btn').textContent = config.concierge_cta || defaultConfig.concierge_cta;
+      document.getElementById('journal-title').textContent = config.journal_title || defaultConfig.journal_title;
+      document.getElementById('journal-text').textContent = config.journal_text || defaultConfig.journal_text;
+      document.getElementById('journal-cta-btn').textContent = config.journal_cta || defaultConfig.journal_cta;
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig: defaultConfig,
+        onConfigChange: onConfigChange,
+        mapToCapabilities: (config) => ({
+          recolorables: [
+            {
+              get: () => config.background_color || defaultConfig.background_color,
+              set: (value) => {
+                config.background_color = value;
+                window.elementSdk.setConfig({ background_color: value });
+              }
+            },
+            {
+              get: () => config.gold_accent || defaultConfig.gold_accent,
+              set: (value) => {
+                config.gold_accent = value;
+                window.elementSdk.setConfig({ gold_accent: value });
+              }
+            },
+            {
+              get: () => config.light_gold || defaultConfig.light_gold,
+              set: (value) => {
+                config.light_gold = value;
+                window.elementSdk.setConfig({ light_gold: value });
+              }
+            },
+            {
+              get: () => config.text_color || defaultConfig.text_color,
+              set: (value) => {
+                config.text_color = value;
+                window.elementSdk.setConfig({ text_color: value });
+              }
+            },
+            {
+              get: () => config.secondary_text || defaultConfig.secondary_text,
+              set: (value) => {
+                config.secondary_text = value;
+                window.elementSdk.setConfig({ secondary_text: value });
+              }
+            }
+          ],
+          borderables: [],
+          fontEditable: {
+            get: () => config.font_family || defaultConfig.font_family,
+            set: (value) => {
+              config.font_family = value;
+              window.elementSdk.setConfig({ font_family: value });
+            }
+          },
+          fontSizeable: {
+            get: () => config.font_size || defaultConfig.font_size,
+            set: (value) => {
+              config.font_size = value;
+              window.elementSdk.setConfig({ font_size: value });
+            }
+          }
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ["hero_headline", config.hero_headline || defaultConfig.hero_headline],
+          ["hero_subheadline", config.hero_subheadline || defaultConfig.hero_subheadline],
+          ["hero_primary_cta", config.hero_primary_cta || defaultConfig.hero_primary_cta],
+          ["hero_secondary_cta", config.hero_secondary_cta || defaultConfig.hero_secondary_cta],
+          ["brand_title", config.brand_title || defaultConfig.brand_title],
+          ["brand_text", config.brand_text || defaultConfig.brand_text],
+          ["brand_cta", config.brand_cta || defaultConfig.brand_cta],
+          ["collection_title", config.collection_title || defaultConfig.collection_title],
+          ["collection_cta", config.collection_cta || defaultConfig.collection_cta],
+          ["membership_title", config.membership_title || defaultConfig.membership_title],
+          ["membership_text", config.membership_text || defaultConfig.membership_text],
+          ["membership_cta", config.membership_cta || defaultConfig.membership_cta],
+          ["concierge_title", config.concierge_title || defaultConfig.concierge_title],
+          ["concierge_text", config.concierge_text || defaultConfig.concierge_text],
+          ["concierge_cta", config.concierge_cta || defaultConfig.concierge_cta],
+          ["journal_title", config.journal_title || defaultConfig.journal_title],
+          ["journal_text", config.journal_text || defaultConfig.journal_text],
+          ["journal_cta", config.journal_cta || defaultConfig.journal_cta]
+        ])
+      });
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9b2076fca05ad0e2',t:'MTc2NjQxNTM3NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
